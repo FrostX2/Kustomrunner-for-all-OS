@@ -1,0 +1,9 @@
+Package: kustomrunner
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: NotFrost(Owner) <frostx.apk@gmail.com>
+Description: Kustomrunner — Universal customizable app launcher
+ A cross-platform portable launcher with theming, plugin support,
+ and universal installers for Linux, Windows, and macOS.

@@ -1,0 +1,25 @@
+pkgname=kustomrunner
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Kustomrunner — Universal customizable app launcher"
+arch=('any')
+url="Config later"
+license=('MIT')
+depends=('bash' 'python' 'jq')
+source=("kustomrunner-$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+package() {
+    install -dm755 "$pkgdir/usr/share/kustomrunner"
+    install -Dm755 kustomrunner/main.sh "$pkgdir/usr/share/kustomrunner/main.sh"
+    install -Dm644 kustomrunner/config.json "$pkgdir/usr/share/kustomrunner/config.json"
+
+    # skins, plugins, utils
+    cp -r kustomrunner/skins "$pkgdir/usr/share/kustomrunner"
+    cp -r kustomrunner/plugins "$pkgdir/usr/share/kustomrunner"
+    cp -r kustomrunner/utils "$pkgdir/usr/share/kustomrunner"
+
+    # Binary symlink
+    install -dm755 "$pkgdir/usr/bin"
+    ln -sf /usr/share/kustomrunner/main.sh "$pkgdir/usr/bin/kustomrunner"
+}

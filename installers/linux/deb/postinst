@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+echo "[Kustomrunner] Running post-install..."
+
+# Ensure binary is executable
+chmod +x /usr/share/kustomrunner/main.sh || true
+
+# Create symlink
+ln -sf /usr/share/kustomrunner/main.sh /usr/bin/kustomrunner
+
+echo "[Kustomrunner] Installed successfully!"

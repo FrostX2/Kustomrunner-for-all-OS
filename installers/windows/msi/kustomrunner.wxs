@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <Product
+    Id="*"
+    Name="Kustomrunner"
+    Manufacturer="YourName"
+    Version="1.0.0"
+    Language="1033"
+    UpgradeCode="da879011-719f-4ce7-80ad-9043cd7a22f0">
+
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" />
+
+    <MediaTemplate />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Kustomrunner">
+
+          <!-- FIX: removed Directory="INSTALLFOLDER" -->
+          <Component Id="ExeFile" Guid="7c57d139-f06e-4d67-8c8d-90d34cab1b94">
+            <File
+              Id="KustomrunnerExe"
+              Name="kustomrunner.exe"
+              Source="Z:\\mnt\\mydisk\\Kustomrunner\\installers\\windows\\exe\\kustomrunner.exe"
+            />
+          </Component>
+
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="MainFeature" Title="Kustomrunner" Level="1">
+      <ComponentRef Id="ExeFile" />
+    </Feature>
+
+  </Product>
+
+</Wix>

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Kustomrunner
+Exec=AppRun
+Icon=kustomrunner
+Type=Application
+Categories=Utility;
+Comment=Universal customizable app launcher
